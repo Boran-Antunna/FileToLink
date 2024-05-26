@@ -32,9 +32,9 @@ class Var(object):
     FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.railway.app'
     HAS_SSL=bool(getenv('HAS_SSL',False))
     if HAS_SSL:
-        URL = "0.tcp.ap.ngrok.io".format(FQDN)
+        URL = "web-production-a59d.up.railway.app".format(FQDN)
     else:
-        URL = "0.tcp.ap.ngrok.io".format(FQDN)
+        URL = "web-production-a59d.up.railway.app".format(FQDN)
     DATABASE_URL = str(getenv('DATABASE_URL', 'mongodb+srv://developervro:developerrapuka@cluster9.gcj9754.mongodb.net/?retryWrites=true&w=majority&appName=Cluster9'))
     UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', None))
     BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001362659779")).split())) 
